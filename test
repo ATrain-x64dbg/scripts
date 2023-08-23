@@ -338,7 +338,7 @@ infoSeverityCorner.Parent = infoSeverityFrame
 
 hideInfoSeverityCornerFrame.Name = "hideSeverityCornerFrame"
 hideInfoSeverityCornerFrame.Parent = infoSeverityFrame
-hideInfoSeverityCornerFrame.BackgroundColor3 = Color3.fromRGB(204, 226, 254)
+hideInfoSeverityCornerFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 hideInfoSeverityCornerFrame.BorderSizePixel = 0
 hideInfoSeverityCornerFrame.Position = UDim2.new(0.5, 0, 0, 0)
 hideInfoSeverityCornerFrame.Size = UDim2.new(0.5, 0, 1, 0)
@@ -435,7 +435,7 @@ messageTemplateCorner.Parent = messageTemplateFrame
 
 messageSeverityFrame.Name = "severityFrame"
 messageSeverityFrame.Parent = messageTemplateFrame
-messageSeverityFrame.BackgroundColor3 = Color3.fromRGB(112, 118, 130)
+messageSeverityFrame.BackgroundColor3 = Color3.fromRGB(175, 175, 175)
 messageSeverityFrame.Size = UDim2.new(0, 10, 1, 0)
 
 messageSeverityCorner.Name = "severityCorner"
