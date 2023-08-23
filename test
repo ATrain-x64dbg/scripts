@@ -252,7 +252,7 @@ errorImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 errorImage.BackgroundTransparency = 1
 errorImage.BorderSizePixel = 0
 errorImage.Position = UDim2.new(0, 15, 0.5, 0)
-errorImage.Size = UDim2.new(0, 20, 0, 20)
+errorImage.Size = UDim2.new(0, 30, 0, 30)
 errorImage.Image = "rbxassetid://9072920609"
 errorImage.ImageColor3 = Color3.fromRGB(236, 88, 76)
 
@@ -273,7 +273,7 @@ errorHeadingText.ClipsDescendants = true
 errorHeadingText.Size = UDim2.new(1, 0, 0, 20)
 errorHeadingText.Font = Enum.Font.GothamBold
 errorHeadingText.Text = "Error"
-errorHeadingText.TextColor3 = Color3.fromRGB(0, 0, 0)
+errorHeadingText.TextColor3 = Color3.fromRGB(255, 255, 255)
 errorHeadingText.TextSize = 14
 errorHeadingText.TextXAlignment = Enum.TextXAlignment.Left
 errorHeadingText.TextYAlignment = Enum.TextYAlignment.Bottom
