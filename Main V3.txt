@@ -1,0 +1,690 @@
+--Number for spin speed can be 1.8e+307
+game.Workspace.Camera.FieldOfView = 90
+game.Workspace.FallenPartsDestroyHeight = -50000
+
+spawn(function() -- Seperates Scripts
+-- Variables
+	
+	local player = game.Players.LocalPlayer
+	local mouse = player:GetMouse()
+	
+	-- Settings
+
+ -- has to be lowercase
+bind2 = "v" -- mountain teleport
+bind3 = "c" -- fling up
+bind4 = "n" -- ontop of tunnel
+
+-- Script
+
+
+mouse.KeyDown:connect(function(key) -- Teleports to you the mountains.
+if key == bind2 then -- If key == key pressed then teleport.
+player.Character.HumanoidRootPart.CFrame = CFrame.new(-78.4244232, 84.0042725, 20358.9785, 0.999979794, 6.13626483e-08, -0.00636074692, -6.12666895e-08, 1, 1.52811541e-08, 0.00636074692, -1.48911425e-08, 0.999979794)
+end
+end)
+mouse.KeyDown:connect(function(key) -- Teleports to you the death realm.
+if key == bind3 then -- If key == key pressed then teleport.
+local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+hrp:PivotTo(game.Workspace.wetpussy.CFrame + Vector3.new(0,13.5,0))
+--player.Character.HumanoidRootPart.CFrame = CFrame.new(51902.5469, -499.55, 26959.5039, 0.12565057, 0.0946119204, 0.987552822, 2.21153087e-07, 0.995442092, -0.0953677818, -0.992074549, 0.0119832344, 0.125077844)
+end
+end)
+mouse.KeyDown:connect(function(key)
+if key == bind4 then
+player.Character.HumanoidRootPart.CFrame = CFrame.new(10.5481281, 634.40564, -346.892731, 0.444520682, 2.69786078e-08, -0.895768583, -2.74651075e-08, 1, 1.64884089e-08, 0.895768583, 1.72729422e-08, 0.444520682) + Vector3.new(0,30,-15)
+end
+
+end)
+end)-- Multiple end)'s needed for every function otherwise it will not execute.
+
+spawn(function()
+bind5 = "z"
+local gui = Instance.new("ScreenGui", game.CoreGui)
+local TextButton = Instance.new("TextBox", gui)
+local TextPrint = Instance.new("TextLabel", gui)
+local TextButton2 = Instance.new("TextBox", gui)
+local TextPrint2 = Instance.new("TextLabel", gui)
+local TextButton3 = Instance.new("TextBox", gui)
+local TextPrint3 = Instance.new("TextLabel", gui)
+local TextButton4 = Instance.new("TextBox", gui)
+local TextPrint4 = Instance.new("TextLabel", gui)
+
+TextPrint.Text = ("Display Name")
+TextPrint.Font = Enum.Font.SourceSans
+TextPrint.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextPrint.FontSize = 7
+TextPrint.TextColor3 = Color3.new(255,255,255)
+TextPrint.Position = UDim2.new(0.5,-950,0.5,64)
+TextPrint.Size = UDim2.new(0,150,0,35)
+TextPrint.BorderColor3 = Color3.new(0,0,0)
+TextPrint.BackgroundColor3 = Color3.fromRGB(50,50,50)
+TextPrint.BorderSizePixel = 1
+TextPrint.TextScaled = false
+
+TextPrint2.Text = ("OffSet")
+TextPrint2.Font = Enum.Font.SourceSans
+TextPrint2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextPrint2.FontSize = 7
+TextPrint2.TextColor3 = Color3.new(255,255,255)
+TextPrint2.Position = UDim2.new(0.5,-950,0.5,160)
+TextPrint2.Size = UDim2.new(0,150,0,35)
+TextPrint2.BorderColor3 = Color3.new(0,0,0)
+TextPrint2.BackgroundColor3 = Color3.fromRGB(50,50,50)
+TextPrint2.BorderSizePixel = 1
+TextPrint2.TextScaled = false
+
+TextPrint3.Text = ("Distance")
+TextPrint3.Font = Enum.Font.SourceSans
+TextPrint3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextPrint3.FontSize = 7
+TextPrint3.TextColor3 = Color3.new(255,255,255)
+TextPrint3.Position = UDim2.new(0.5,-950,0.5,257)
+TextPrint3.Size = UDim2.new(0,150,0,35)
+TextPrint3.BorderColor3 = Color3.new(0,0,0)
+TextPrint3.BackgroundColor3 = Color3.fromRGB(50,50,50)
+TextPrint3.BorderSizePixel = 1
+TextPrint3.TextScaled = false
+
+TextButton2.Text = 0
+TextButton2.BackgroundTransparency = 0.5
+TextButton2.BackgroundColor3 = Color3.new(255,255,255)
+TextButton2.Font = Enum.Font.SourceSans
+TextButton2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton2.FontSize = 6
+TextButton2.Position = UDim2.new(0.5,-950,0.5,195)
+TextButton2.Size = UDim2.new(0,150,0,50)
+TextButton2.BorderColor3 = Color3.new(0,0,0)
+TextButton2.BorderSizePixel = 1
+TextButton2.ClearTextOnFocus = false
+
+TextButton3.Text = 5
+TextButton3.BackgroundTransparency = 0.5
+TextButton3.BackgroundColor3 = Color3.new(255,255,255)
+TextButton3.Font = Enum.Font.SourceSans
+TextButton3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton3.FontSize = 6
+TextButton3.Position = UDim2.new(0.5,-950,0.5,293)
+TextButton3.Size = UDim2.new(0,150,0,50)
+TextButton3.BorderColor3 = Color3.new(0,0,0)
+TextButton3.BorderSizePixel = 1
+TextButton3.ClearTextOnFocus = false
+
+TextButton4.Text = 10
+TextButton4.BackgroundTransparency = 0.5
+TextButton4.BackgroundColor3 = Color3.new(255,255,255)
+TextButton4.Font = Enum.Font.SourceSans
+TextButton4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton4.FontSize = 6
+TextButton4.Position = UDim2.new(0.5,-950,0.5,391)
+TextButton4.Size = UDim2.new(0,150,0,50)
+TextButton4.BorderColor3 = Color3.new(0,0,0)
+TextButton4.BorderSizePixel = 1
+TextButton4.ClearTextOnFocus = false
+
+TextPrint4.Text = ("Spin Speed")
+TextPrint4.Font = Enum.Font.SourceSans
+TextPrint4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextPrint4.FontSize = 7
+TextPrint4.TextColor3 = Color3.new(255,255,255)
+TextPrint4.Position = UDim2.new(0.5,-950,0.5,355)
+TextPrint4.Size = UDim2.new(0,150,0,35)
+TextPrint4.BorderColor3 = Color3.new(0,0,0)
+TextPrint4.BackgroundColor3 = Color3.fromRGB(50,50,50)
+TextPrint4.BorderSizePixel = 1
+TextPrint4.TextScaled = false
+
+TextButton.BackgroundTransparency = 0.5
+TextButton.BackgroundColor3 = Color3.new(255,255,255)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.FontSize = 6
+TextButton.Position = UDim2.new(0.5,-950,0.5,100)
+TextButton.Size = UDim2.new(0,150,0,50)
+TextButton.BorderColor3 = Color3.new(0,0,0)
+TextButton.BorderSizePixel = 1
+
+
+--//Services\\--
+local RunService = game:GetService("RunService");
+local playerService = game:GetService("Players");
+--//Declarations\\--
+local Player = game.Players.LocalPlayer
+local mouse = Player:GetMouse()
+
+TextButton.FocusLost:connect(function()
+for i,v in pairs(game.Players:GetChildren()) do
+if (string.sub(string.lower(v.DisplayName),1,string.len(TextButton.Text))) == string.lower(TextButton.Text) then
+local spinTime = 0
+local Daddy = RunService.Heartbeat:Connect(function(deltaTime)
+targetPlayer = v.Name
+local speed = TextButton4.Text
+local distance = TextButton3.Text
+local localPlayer = playerService.LocalPlayer
+
+local localRoot = localPlayer.Character.HumanoidRootPart
+local targetRoot = playerService[targetPlayer].Character.HumanoidRootPart
+
+game.Workspace.CurrentCamera.CameraSubject = targetRoot
+
+
+   spinTime += deltaTime * speed
+
+   local targetPos = targetRoot.Position
+
+
+   local xOffset = math.sin(spinTime) * distance
+   local zOffset = math.cos(spinTime) * distance
+   localRoot.CFrame = CFrame.new(targetPos + Vector3.new(xOffset, TextButton2.Text, zOffset), targetPos)
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+spawn(function()
+mouse.KeyDown:connect(function(key)
+if key == bind5 then
+Daddy:Disconnect()
+game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+end
+end)
+end)
+end
+end
+end)
+end)
+spawn(function()
+local gui2 = Instance.new("ScreenGui", game.CoreGui)
+local TextButton5 = Instance.new("TextBox", gui2)
+local TextPrint5 = Instance.new("TextLabel", gui2)
+TextButton5.BackgroundTransparency = 0.5
+TextButton5.BackgroundColor3 = Color3.new(255,255,255)
+TextButton5.Font = Enum.Font.SourceSans
+TextButton5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton5.FontSize = 6
+TextButton5.Position = UDim2.new(0.5,-950,0.5,0)
+TextButton5.Size = UDim2.new(0,150,0,50)
+TextButton5.BorderColor3 = Color3.new(0,0,0)
+TextButton5.BorderSizePixel = 1
+TextButton5.ClearTextOnFocus = true
+
+TextPrint5.Text = ("Fling")
+TextPrint5.Font = Enum.Font.SourceSans
+TextPrint5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextPrint5.FontSize = 7
+TextPrint5.TextColor3 = Color3.new(255,255,255)
+TextPrint5.Position = UDim2.new(0.5,-950,0.5,-35)
+TextPrint5.Size = UDim2.new(0,150,0,35)
+TextPrint5.BorderColor3 = Color3.new(0,0,0)
+TextPrint5.BackgroundColor3 = Color3.fromRGB(50,50,50)
+TextPrint5.BorderSizePixel = 1
+TextPrint5.TextScaled = false
+
+TextButton5.FocusLost:connect(function()
+
+local Targets = {TextButton5.Text} -- "All", "Target Name", "arian_was_here"
+
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+
+local AllBool = false
+
+local GetPlayer = function(Name)
+    Name = Name:lower()
+    if Name == "all" or Name == "others" then
+        AllBool = true
+        return
+    elseif Name == "random" then
+        local GetPlayers = Players:GetPlayers()
+        if table.find(GetPlayers,Player) then table.remove(GetPlayers,table.find(GetPlayers,Player)) end
+        return GetPlayers[math.random(#GetPlayers)]
+    elseif Name ~= "random" and Name ~= "all" and Name ~= "others" then
+        for _,x in next, Players:GetPlayers() do
+            if x ~= Player then
+                if x.Name:lower():match("^"..Name) then
+                    return x;
+                elseif x.DisplayName:lower():match("^"..Name) then
+                    return x;
+                end
+            end
+        end
+    else
+        return
+    end
+end
+
+local Message = function(_Title, _Text, Time)
+    game:GetService("StarterGui"):SetCore("SendNotification", {Title = _Title, Text = _Text, Duration = Time})
+end
+
+local SkidFling = function(TargetPlayer)
+    local Character = Player.Character
+    local Humanoid = Character and Character:FindFirstChildOfClass("Humanoid")
+    local RootPart = Humanoid and Humanoid.RootPart
+
+    local TCharacter = TargetPlayer.Character
+    local THumanoid
+    local TRootPart
+    local THead
+    local Accessory
+    local Handle
+
+    if TCharacter:FindFirstChildOfClass("Humanoid") then
+        THumanoid = TCharacter:FindFirstChildOfClass("Humanoid")
+    end
+    if THumanoid and THumanoid.RootPart then
+        TRootPart = THumanoid.RootPart
+    end
+    if TCharacter:FindFirstChild("Head") then
+        THead = TCharacter.Head
+    end
+    if TCharacter:FindFirstChildOfClass("Accessory") then
+        Accessory = TCharacter:FindFirstChildOfClass("Accessory")
+    end
+    if Accessoy and Accessory:FindFirstChild("Handle") then
+        Handle = Accessory.Handle
+    end
+
+    if Character and Humanoid and RootPart then
+        if RootPart.Velocity.Magnitude < 50 then
+            getgenv().OldPos = RootPart.CFrame
+        end
+        if THumanoid and THumanoid.Sit and not AllBool then
+            return Message("Error Occurred", "Targeting is sitting", 5) -- u can remove dis part if u want lol
+        end
+        if THead then
+            workspace.CurrentCamera.CameraSubject = THead
+        elseif not THead and Handle then
+            workspace.CurrentCamera.CameraSubject = Handle
+        elseif THumanoid and TRootPart then
+            workspace.CurrentCamera.CameraSubject = THumanoid
+        end
+        if not TCharacter:FindFirstChildWhichIsA("BasePart") then
+            return
+        end
+        
+        local FPos = function(BasePart, Pos, Ang)
+            RootPart.CFrame = CFrame.new(BasePart.Position) * Pos * Ang
+            Character:SetPrimaryPartCFrame(CFrame.new(BasePart.Position) * Pos * Ang)
+            --You can change 9e7 * 10 to 999 or anything
+            RootPart.Velocity = Vector3.new(9e7, 9e7 * 10, 9e7)
+            RootPart.RotVelocity = Vector3.new(9e8, 9e8, 9e8)
+        end
+        
+        local SFBasePart = function(BasePart)
+            local TimeToWait = 2
+            local Time = tick()
+            local Angle = 0
+
+            repeat
+                if RootPart and THumanoid then
+                    if BasePart.Velocity.Magnitude < 50 then
+                        Angle = Angle + 100
+
+                        FPos(BasePart, CFrame.new(0, 1.5, 0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle),0 ,0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(2.25, 1.5, -2.25) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(-2.25, -1.5, 2.25) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, 1.5, 0) + THumanoid.MoveDirection,CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0) + THumanoid.MoveDirection,CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+                    else
+                        FPos(BasePart, CFrame.new(0, 1.5, THumanoid.WalkSpeed), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, -THumanoid.WalkSpeed), CFrame.Angles(0, 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, 1.5, THumanoid.WalkSpeed), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+                        
+                        FPos(BasePart, CFrame.new(0, 1.5, TRootPart.Velocity.Magnitude / 1.25), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, -TRootPart.Velocity.Magnitude / 1.25), CFrame.Angles(0, 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, 1.5, TRootPart.Velocity.Magnitude / 1.25), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0), CFrame.Angles(0, 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5 ,0), CFrame.Angles(math.rad(-90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0), CFrame.Angles(0, 0, 0))
+                        task.wait()
+                    end
+                else
+                    break
+                end
+            until BasePart.Velocity.Magnitude > 500 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or THumanoid.Sit or Humanoid.Health <= 0 or tick() > Time + TimeToWait
+        end
+        
+        workspace.FallenPartsDestroyHeight = 0/0
+        
+        local BV = Instance.new("BodyVelocity")
+        BV.Name = "EpixVel"
+        BV.Parent = RootPart
+        BV.Velocity = Vector3.new(9e8, 9e8 * 9999999, 9e8)
+        BV.MaxForce = Vector3.new(1/0, 1/0, 1/0)
+        
+        Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated, false)
+        
+        if TRootPart and THead then
+            if (TRootPart.CFrame.p - THead.CFrame.p).Magnitude > 5 then
+                SFBasePart(THead)
+            else
+                SFBasePart(TRootPart)
+            end
+        elseif TRootPart and not THead then
+            SFBasePart(TRootPart)
+        elseif not TRootPart and THead then
+            SFBasePart(THead)
+        elseif not TRootPart and not THead and Accessory and Handle then
+            SFBasePart(Handle)
+        else
+            return Message("Error Occurred", "Target is missing everything", 5)
+        end
+        
+        BV:Destroy()
+        Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated, true)
+        workspace.CurrentCamera.CameraSubject = Humanoid
+        
+        repeat
+            RootPart.CFrame = getgenv().OldPos * CFrame.new(0, .5, 0)
+            Character:SetPrimaryPartCFrame(getgenv().OldPos * CFrame.new(0, .5, 0))
+            Humanoid:ChangeState("GettingUp")
+            table.foreach(Character:GetChildren(), function(_, x)
+                if x:IsA("BasePart") then
+                    x.Velocity, x.RotVelocity = Vector3.new(), Vector3.new()
+                end
+            end)
+            task.wait()
+        until (RootPart.Position - getgenv().OldPos.p).Magnitude < 25
+        workspace.FallenPartsDestroyHeight = getgenv().FPDH
+    else
+        return Message("Error Occurred", "Random error", 5)
+    end
+end
+
+if not Welcome then Message("Script by AnthonyIsntHere", "Enjoy!", 5) end
+getgenv().Welcome = true
+if Targets[1] then for _,x in next, Targets do GetPlayer(x) end else return end
+
+if AllBool then
+    for _,x in next, Players:GetPlayers() do
+        SkidFling(x)
+    end
+end
+
+for _,x in next, Targets do
+    if GetPlayer(x) and GetPlayer(x) ~= Player then
+        if GetPlayer(x).UserId ~= 1414978355 then
+            local TPlayer = GetPlayer(x)
+            if TPlayer then
+                SkidFling(TPlayer)
+            end
+        else
+            Message("Error Occurred", "This user is whitelisted! (Owner)", 5)
+        end
+    elseif not GetPlayer(x) and not AllBool then
+        Message("Error Occurred", "Username Invalid", 5)
+    end
+end
+
+end)
+spawn(function()
+local Outlines = true
+local OutlineColoring = Color3.fromRGB(255, 255, 255)
+local OutlineFill = true
+local FillOpacity = 0.5
+local FillColoring = Color3.fromRGB(255, 255, 255)
+
+local NameTags = true
+local TextFont = Enum.Font.SourceSans
+local NameColor = Color3.fromRGB(255, 255, 255)
+local NamePositioning = true
+
+--[[
+   By Polarrr#0001 :)
+   https://v3rmillion.net/member.php?action=profile&uid=2340618
+--]]
+
+--// Don't Touch!
+local Folder = Instance.new("Folder", game:GetService("CoreGui"))
+Folder.Name = ""
+
+local AddOutline = function(Character)
+   local Highlight = Instance.new("Highlight", Folder)
+   
+   Highlight.OutlineColor = OutlineColoring
+   Highlight.Adornee = Character
+   
+   if OutlineFill == true then
+       Highlight.FillColor = FillColoring
+       Highlight.FillTransparency = FillOpacity
+   else
+       Highlight.FillTransparency = 0.5
+   end
+end
+
+local AddNameTag = function(Character)
+   local BGui = Instance.new("BillboardGui", Folder)
+   local Frame = Instance.new("Frame", BGui)
+   local TextLabel = Instance.new("TextLabel", Frame)
+   
+   BGui.Adornee = Character:WaitForChild("Head")
+   BGui.StudsOffset = Vector3.new(0, 3, 0)
+   BGui.AlwaysOnTop = true
+   
+   BGui.Size = UDim2.new(8, 0, 1, 0)
+   Frame.Size = UDim2.new(1, 0, 1, 0)
+   TextLabel.Size = UDim2.new(1, 0, 1, 0)
+   
+   Frame.BackgroundTransparency = 1
+   TextLabel.BackgroundTransparency = 1
+   
+   TextLabel.Text = Character.Humanoid.DisplayName
+   TextLabel.Font = TextFont
+   TextLabel.TextColor3 = NameColor
+   TextLabel.TextScaled = NamePositioning
+   TextLabel.TextSize = UDim2.new(16)
+end
+
+for i, v in ipairs(game:GetService("Players"):GetPlayers()) do
+   if v ~= game:GetService("Players").LocalPlayer then
+       v.CharacterAdded:Connect(function(Character)
+           if Outlines == true then
+               AddOutline(Character)
+           end
+           if NameTags == true then
+               AddNameTag(Character)
+           end
+       end)
+       
+       if v.Character then
+           if Outlines == true then
+               AddOutline(v.Character)
+           end
+           if NameTags == true then
+               AddNameTag(v.Character)
+           end
+       end
+   end
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(Player)
+   Player.CharacterAdded:Connect(function(Character)
+       if Outlines == true then
+           AddOutline(Character)
+       end
+       if NameTags == true then
+           AddNameTag(Character)
+       end
+   end)
+end)
+end)
+end)
+spawn(function()
+game.Workspace.Live.DescendantAdded:Connect(function(death1)
+if death1.Name == ("Death Counter") then
+game.StarterGui:SetCore("SendNotification", {
+		Title = "Death Counter Equipped"; -- the title (ofc)
+Text = (death1.Parent.Humanoid.DisplayName); -- what the text says (ofc)
+Icon = "rbxassetid://57254792"; -- the image if u want. 
+Duration = 3; -- how long the notification should in secounds
+})
+end
+end)
+
+game.Workspace.Live.DescendantAdded:Connect(function(death2)
+if death2.Name == ("Serious Punch") then
+game.StarterGui:SetCore("SendNotification", {
+		Title = "Serious Punch Equipped"; -- the title (ofc)
+Text = (death2.Parent.Humanoid.DisplayName); -- what the text says (ofc)
+Icon = "rbxassetid://57254792"; -- the image if u want. 
+Duration = 3; -- how long the notification should in secounds
+})
+end
+end)
+
+game.Workspace.Live.DescendantAdded:Connect(function(death3)
+if death3.Name == ("Table Flip") then
+game.StarterGui:SetCore("SendNotification", {
+		Title = "Table Flip Equipped"; -- the title (ofc)
+Text = (death3.Parent.Humanoid.DisplayName); -- what the text says (ofc)
+Icon = "rbxassetid://57254792"; -- the image if u want. 
+Duration = 3; -- how long the notification should in secounds
+})
+end
+end)
+
+game.Workspace.Live.DescendantAdded:Connect(function(death4)
+if death4.Name == ("Omni Directional Punch") then
+game.StarterGui:SetCore("SendNotification", {
+		Title = "Omni Directional Punch"; -- the title (ofc)
+Text = (death4.Parent.Humanoid.DisplayName); -- what the text says (ofc)
+Icon = "rbxassetid://57254792"; -- the image if u want. 
+Duration = 3; -- how long the notification should in secounds
+})
+
+
+end
+end)
+end)
+
+spawn(function()
+local ad = Instance.new("Part")
+ad.Parent = game.Workspace
+ad.Name = 'wetpussy'
+ad.Position = Vector3.new(51902.5469, -5000.25, 26959.5039, 0.12565057, 0.0946119204, 0.987552822, 2.21153087e-07, 0.995442092, -0.0953677818, -0.992074549, 0.0119832344, 0.125077844, 1, -6.07880111e-08, -0.025626665, -6.20617442e-08, -0.999671578)
+ad.Size = Vector3.new(100000,10,100000)
+ad.Anchored = true
+ad.Transparency = 0.5
+
+local a = Instance.new("Part")
+a.CFrame = CFrame.new(51902.5, -4995, 27982.5)
+a.Parent = game.Workspace
+a.Anchored = true
+a.Name = "CBorder1"
+a.Size = Vector3.new(2048,12,2)
+local b = Instance.new("Part")
+b.CFrame = CFrame.new(51902.5, -4995, 25936.5)
+b.Parent = game.Workspace
+b.Anchored = true
+b.Name = "CBorder2"
+b.Size = Vector3.new(2048,12,2)
+
+local c = Instance.new("Part")
+c.CFrame = CFrame.new(50879.5, -4995, 26959.5)
+c.Parent = game.Workspace
+c.Anchored = true
+c.Name = "CBorder3"
+c.Rotation = Vector3.new(0,90,0)
+c.Size = Vector3.new(2048,12,2)
+
+local d = Instance.new("Part")
+d.CFrame = CFrame.new(52925.5, -4995, 26959.5)
+d.Parent = game.Workspace
+d.Anchored = true
+d.Name = "CBorder4"
+d.Rotation = Vector3.new(0,90,0)
+d.Size = Vector3.new(2048,12,2)
+end);
