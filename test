@@ -254,7 +254,7 @@ errorImage.BorderSizePixel = 0
 errorImage.Position = UDim2.new(0, 15, 0.5, 0)
 errorImage.Size = UDim2.new(0, 20, 0, 20)
 errorImage.Image = "rbxassetid://9072920609"
-errorImage.ImageColor3 = Color3.fromRGB(236, 88, 76)
+errorImage.ImageColor3 = Color3.fromRGB(255, 88, 76)
 
 errorInformationFrame.Name = "informationFrame"
 errorInformationFrame.Parent = errorTemplateFrame
