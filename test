@@ -248,13 +248,13 @@ hideErrorSeverityCornerFrame.Size = UDim2.new(0.5, 0, 1, 0)
 errorImage.Name = "image"
 errorImage.Parent = errorTemplateFrame
 errorImage.AnchorPoint = Vector2.new(0, 0.5)
-errorImage.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+errorImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 errorImage.BackgroundTransparency = 1
 errorImage.BorderSizePixel = 0
 errorImage.Position = UDim2.new(0, 15, 0.5, 0)
 errorImage.Size = UDim2.new(0, 20, 0, 20)
 errorImage.Image = "rbxassetid://9072920609"
-errorImage.ImageColor3 = Color3.fromRGB(255, 0, 0)
+errorImage.ImageColor3 = Color3.fromRGB(236, 88, 76)
 
 errorInformationFrame.Name = "informationFrame"
 errorInformationFrame.Parent = errorTemplateFrame
