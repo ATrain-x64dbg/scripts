@@ -70,7 +70,7 @@ local function GetPlayersString()
     local PlayerList = Players:GetPlayers();
 
     for i = 1, #PlayerList do
-        PlayerList[i] = PlayerList[i].Name;
+        PlayerList[i] = PlayerList[i].DisplayName;
     end;
 
     table.sort(PlayerList, function(str1, str2) return str1 < str2 end);
@@ -164,15 +164,6 @@ end;
 function Library:MakeDraggable(Instance, Cutoff)
     Instance.Active = true;
 
-    
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
     Instance.InputBegan:Connect(function(Input)
         if Input.UserInputType == Enum.UserInputType.MouseButton1 then
             local ObjPos = Vector2.new(
@@ -768,15 +759,6 @@ do
                     { TextColor3 = 'FontColor' }
                 );
 
-                
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
                 Button.InputBegan:Connect(function(Input)
                     if Input.UserInputType ~= Enum.UserInputType.MouseButton1 then
                         return
@@ -915,15 +897,6 @@ end)
             ColorPicker:Display();
         end;
 
-        
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
         SatVibMap.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                 while InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
@@ -946,15 +919,6 @@ end)
             end;
         end);
 
-        
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
         HueSelectorInner.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                 while InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
@@ -972,15 +936,6 @@ end)
             end;
         end);
 
-        
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
         DisplayFrame.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and not Library:MouseIsOverOpenedFrame() then
                 if PickerFrameOuter.Visible then
@@ -996,15 +951,6 @@ end)
         end);
 
         if TransparencyBoxInner then
-            
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
             TransparencyBoxInner.InputBegan:Connect(function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                     while InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
@@ -1024,15 +970,6 @@ end)
             end);
         end;
 
-        
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
         Library:GiveSignal(InputService.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                 local AbsPos, AbsSize = PickerFrameOuter.AbsolutePosition, PickerFrameOuter.AbsoluteSize;
@@ -1194,15 +1131,6 @@ end)
                 Library.RegistryMap[Label].Properties.TextColor3 = 'FontColor';
             end;
 
-            
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
             Label.InputBegan:Connect(function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                     ModeButton:Select();
@@ -1299,15 +1227,6 @@ end)
 
         local Picking = false;
 
-        
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
         PickOuter.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and not Library:MouseIsOverOpenedFrame() then
                 Picking = true;
@@ -1332,17 +1251,7 @@ end)
 
                 wait(0.2);
 
-                
                 local Event;
-
-                local plr = game.Players.LocalPlayer
-                local Chat = plr.PlayerGui:WaitForChild("Chat")
-                local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-                InputService.InputBegan:Connect(function()
-                    local focus = ChatBox:IsFocused()
-                    if focus == true then
-                        return end
-                end)
                 Event = InputService.InputBegan:Connect(function(Input)
                     local Key;
 
@@ -1372,15 +1281,6 @@ end)
             end;
         end);
 
-        
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
         Library:GiveSignal(InputService.InputBegan:Connect(function(Input)
             if (not Picking) then
                 if KeyPicker.Mode == 'Toggle' then
@@ -1607,15 +1507,6 @@ do
                 return true
             end
 
-            
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
             Button.Outer.InputBegan:Connect(function(Input)
                 if not ValidateClick(Input) then return end
                 if Button.Locked then return end
@@ -2033,15 +1924,6 @@ end)
             Library:UpdateDependencyBoxes();
         end;
 
-        
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
         ToggleRegion.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and not Library:MouseIsOverOpenedFrame() then
                 Toggle:SetValue(not Toggle.Value) -- Why was it not like this from the start?
@@ -2229,14 +2111,6 @@ end)
             Library:SafeCallback(Slider.Changed, Slider.Value);
         end;
 
-        local plr = game.Players.LocalPlayer
-        local Chat = plr.PlayerGui:WaitForChild("Chat")
-        local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-        InputService.InputBegan:Connect(function()
-            local focus = ChatBox:IsFocused()
-            if focus == true then
-                return end
-        end)
         SliderInner.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and not Library:MouseIsOverOpenedFrame() then
                 local mPos = Mouse.X;
@@ -2553,15 +2427,6 @@ end)
                     Library.RegistryMap[ButtonLabel].Properties.TextColor3 = Selected and 'AccentColor' or 'FontColor';
                 end;
 
-                
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
                 ButtonLabel.InputBegan:Connect(function(Input)
                     if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                         local Try = not Selected;
@@ -2663,15 +2528,6 @@ end)
             Library:SafeCallback(Dropdown.Changed, Dropdown.Value);
         end;
 
-        
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
         DropdownOuter.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and not Library:MouseIsOverOpenedFrame() then
                 if ListOuter.Visible then
@@ -2682,16 +2538,6 @@ end)
             end;
         end);
 
-
-        
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
         InputService.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                 local AbsPos, AbsSize = ListOuter.AbsolutePosition, ListOuter.AbsoluteSize;
@@ -3597,15 +3443,6 @@ function Library:CreateWindow(...)
                     BoxOuter.Size = UDim2.new(1, 0, 0, 20 + Size + 2 + 2);
                 end;
 
-                
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
                 Button.InputBegan:Connect(function(Input)
                     if Input.UserInputType == Enum.UserInputType.MouseButton1 and not Library:MouseIsOverOpenedFrame() then
                         Tab:Show();
@@ -3642,15 +3479,6 @@ end)
             return Tab:AddTabbox({ Name = Name, Side = 2; });
         end;
 
-        
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
         TabButton.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                 Tab:ShowTab();
@@ -3774,15 +3602,6 @@ end)
         Fading = false;
     end
 
-    
-local plr = game.Players.LocalPlayer
-local Chat = plr.PlayerGui:WaitForChild("Chat")
-local ChatBox = Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame:WaitForChild("ChatBar")
-InputService.InputBegan:Connect(function()
-	local focus = ChatBox:IsFocused()
-	if focus == true then
-		return end
-end)
     Library:GiveSignal(InputService.InputBegan:Connect(function(Input, Processed)
         if type(Library.ToggleKeybind) == 'table' and Library.ToggleKeybind.Type == 'KeyPicker' then
             if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode.Name == Library.ToggleKeybind.Value then
