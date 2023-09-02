@@ -250,7 +250,7 @@ function Library:AddToolTip(InfoStr, HoverInstance)
         Tooltip.Visible = false
     end)
 end
-
+--[[
 function Library:OnHighlight(HighlightInstance, Instance, Properties, PropertiesDefault)
     HighlightInstance.MouseEnter:Connect(function()
         local Reg = Library.RegistryMap[Instance];
@@ -270,13 +270,13 @@ function Library:OnHighlight(HighlightInstance, Instance, Properties, Properties
         for Property, ColorIdx in next, PropertiesDefault do
             Instance[Property] = Library[ColorIdx] or ColorIdx;
 
-            --if Reg and Reg.Properties[Property] then
-              --  Reg.Properties[Property] = ColorIdx;
-            --end;
+            if Reg and Reg.Properties[Property] then
+               Reg.Properties[Property] = ColorIdx;
+            end;
         end;
     end)
 end;
-
+]]--
 function Library:MouseIsOverOpenedFrame()
     for Frame, _ in next, Library.OpenedFrames do
         local AbsPos, AbsSize = Frame.AbsolutePosition, Frame.AbsoluteSize;
