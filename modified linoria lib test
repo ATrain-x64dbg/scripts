@@ -1257,11 +1257,11 @@ do
                 Event = InputService.InputBegan:Connect(function(Input)
                     local Key;
 
-                    if Input.UserInputType == Enum.UserInputType.Keyboard then
+                    if Input.UserInputType == Enum.UserInputType.Keyboard and not InputService:GetFocusedTextBox() then
                         Key = Input.KeyCode.Name;
-                    elseif Input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    elseif Input.UserInputType == Enum.UserInputType.MouseButton1 and not InputService:GetFocusedTextBox() then
                         Key = 'MB1';
-                    elseif Input.UserInputType == Enum.UserInputType.MouseButton2 then
+                    elseif Input.UserInputType == Enum.UserInputType.MouseButton2 and not InputService:GetFocusedTextBox() then
                         Key = 'MB2';
                     end;
 
@@ -1284,18 +1284,19 @@ do
         end);
 
         Library:GiveSignal(InputService.InputBegan:Connect(function(Input)
-            if (not Picking) then
+            if (not Picking) and not InputService:GetFocusedTextBox() then
+                if not InputService:GetFocusedTextBox() then
                 if KeyPicker.Mode == 'Toggle' then
                     local Key = KeyPicker.Value;
 
-                    if Key == 'MB1' or Key == 'MB2' and not InputService:GetFocusedTextBox() then
+                    if Key == 'MB1' or Key == 'MB2' and not InputService:GetFocusedTextBox() then -- not it
                         if Key == 'MB1' and Input.UserInputType == Enum.UserInputType.MouseButton1
                         or Key == 'MB2' and Input.UserInputType == Enum.UserInputType.MouseButton2 then
                             KeyPicker.Toggled = not KeyPicker.Toggled
                             KeyPicker:DoClick()
                         end;
-                    elseif Input.UserInputType == Enum.UserInputType.Keyboard and not InputService:GetFocusedTextBox() then
-                        if Input.KeyCode.Name == Key and not InputService:GetFocusedTextBox() then
+                    elseif Input.UserInputType == Enum.UserInputType.Keyboard and not InputService:GetFocusedTextBox() then -- not it
+                        if Input.KeyCode.Name == Key and not InputService:GetFocusedTextBox() then -- not it
                             KeyPicker.Toggled = not KeyPicker.Toggled;
                             KeyPicker:DoClick()
                         end;
@@ -1314,6 +1315,7 @@ do
                     ModeSelectOuter.Visible = false;
                 end;
             end;
+        end;
         end))
 
         Library:GiveSignal(InputService.InputEnded:Connect(function(Input)
