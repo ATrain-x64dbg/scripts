@@ -270,9 +270,9 @@ function Library:OnHighlight(HighlightInstance, Instance, Properties, Properties
         for Property, ColorIdx in next, PropertiesDefault do
             Instance[Property] = Library[ColorIdx] or ColorIdx;
 
-            if Reg and Reg.Properties[Property] then
-                Reg.Properties[Property] = ColorIdx;
-            end;
+            --if Reg and Reg.Properties[Property] then
+              --  Reg.Properties[Property] = ColorIdx;
+            --end;
         end;
     end)
 end;
