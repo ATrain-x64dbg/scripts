@@ -166,7 +166,6 @@ function Library:MakeDraggable(Instance, Cutoff)
 
     Instance.InputBegan:Connect(function(Input)
         if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-            if not InputService:GetFocusedTextBox() then
             local ObjPos = Vector2.new(
                 Mouse.X - Instance.AbsolutePosition.X,
                 Mouse.Y - Instance.AbsolutePosition.Y
@@ -175,10 +174,8 @@ function Library:MakeDraggable(Instance, Cutoff)
             if ObjPos.Y > (Cutoff or 40) then
                 return;
             end;
-        end;
 
             while InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
-                if not InputService:GetFocusedTextBox() then
                 Instance.Position = UDim2.new(
                     0,
                     Mouse.X - ObjPos.X + (Instance.Size.X.Offset * Instance.AnchorPoint.X),
@@ -189,7 +186,6 @@ function Library:MakeDraggable(Instance, Cutoff)
                 RenderStepped:Wait();
             end;
         end;
-    end;
     end)
 end;
 
@@ -250,7 +246,7 @@ function Library:AddToolTip(InfoStr, HoverInstance)
         Tooltip.Visible = false
     end)
 end
---[[
+
 function Library:OnHighlight(HighlightInstance, Instance, Properties, PropertiesDefault)
     HighlightInstance.MouseEnter:Connect(function()
         local Reg = Library.RegistryMap[Instance];
@@ -271,12 +267,12 @@ function Library:OnHighlight(HighlightInstance, Instance, Properties, Properties
             Instance[Property] = Library[ColorIdx] or ColorIdx;
 
             if Reg and Reg.Properties[Property] then
-               Reg.Properties[Property] = ColorIdx;
+                Reg.Properties[Property] = ColorIdx;
             end;
         end;
     end)
 end;
-]]--
+
 function Library:MouseIsOverOpenedFrame()
     for Frame, _ in next, Library.OpenedFrames do
         local AbsPos, AbsSize = Frame.AbsolutePosition, Frame.AbsoluteSize;
@@ -903,7 +899,6 @@ do
 
         SatVibMap.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-                if not InputService:GetFocusedTextBox() then
                 while InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
                     local MinX = SatVibMap.AbsolutePosition.X;
                     local MaxX = MinX + SatVibMap.AbsoluteSize.X;
@@ -922,12 +917,10 @@ do
 
                 Library:AttemptSave();
             end;
-        end;
         end);
 
         HueSelectorInner.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-                if not InputService:GetFocusedTextBox() then
                 while InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
                     local MinY = HueSelectorInner.AbsolutePosition.Y;
                     local MaxY = MinY + HueSelectorInner.AbsoluteSize.Y;
@@ -941,7 +934,6 @@ do
 
                 Library:AttemptSave();
             end;
-        end;
         end);
 
         DisplayFrame.InputBegan:Connect(function(Input)
@@ -961,7 +953,6 @@ do
         if TransparencyBoxInner then
             TransparencyBoxInner.InputBegan:Connect(function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-                    if not InputService:GetFocusedTextBox() then
                     while InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
                         local MinX = TransparencyBoxInner.AbsolutePosition.X;
                         local MaxX = MinX + TransparencyBoxInner.AbsoluteSize.X;
@@ -973,7 +964,6 @@ do
 
                         RenderStepped:Wait();
                     end;
-                end;
 
                     Library:AttemptSave();
                 end;
@@ -982,14 +972,12 @@ do
 
         Library:GiveSignal(InputService.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-                if not InputService:GetFocusedTextBox() then
                 local AbsPos, AbsSize = PickerFrameOuter.AbsolutePosition, PickerFrameOuter.AbsoluteSize;
 
                 if Mouse.X < AbsPos.X or Mouse.X > AbsPos.X + AbsSize.X
                     or Mouse.Y < (AbsPos.Y - 20 - 1) or Mouse.Y > AbsPos.Y + AbsSize.Y then
 
                     ColorPicker:Hide();
-                end;
                 end;
 
                 if not Library:IsMouseOverFrame(ContextMenu.Container) then
@@ -1197,14 +1185,11 @@ do
                 local Key = KeyPicker.Value;
 
                 if Key == 'MB1' or Key == 'MB2' then
-                    if not InputService:GetFocusedTextBox() then
                     return Key == 'MB1' and InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1)
                         or Key == 'MB2' and InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton2);
                 else
-                    if not InputService:GetFocusedTextBox() then
                     return InputService:IsKeyDown(Enum.KeyCode[KeyPicker.Value]);
                 end;
-            end;
             else
                 return KeyPicker.Toggled;
             end;
@@ -1268,7 +1253,6 @@ do
 
                 local Event;
                 Event = InputService.InputBegan:Connect(function(Input)
-                    if not InputService:GetFocusedTextBox() then
                     local Key;
 
                     if Input.UserInputType == Enum.UserInputType.Keyboard then
@@ -1291,7 +1275,6 @@ do
                     Library:AttemptSave();
 
                     Event:Disconnect();
-                end;
                 end);
             elseif Input.UserInputType == Enum.UserInputType.MouseButton2 and not Library:MouseIsOverOpenedFrame() then
                 ModeSelectOuter.Visible = true;
@@ -1300,7 +1283,6 @@ do
 
         Library:GiveSignal(InputService.InputBegan:Connect(function(Input)
             if (not Picking) then
-                if not InputService:GetFocusedTextBox() then
                 if KeyPicker.Mode == 'Toggle' then
                     local Key = KeyPicker.Value;
 
@@ -1316,12 +1298,10 @@ do
                             KeyPicker:DoClick()
                         end;
                     end;
-                    end;
-                end;
                 end;
 
                 KeyPicker:Update();
-            --end;
+            end;
 
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                 local AbsPos, AbsSize = ModeSelectOuter.AbsolutePosition, ModeSelectOuter.AbsoluteSize;
@@ -1336,10 +1316,8 @@ do
 
         Library:GiveSignal(InputService.InputEnded:Connect(function(Input)
             if (not Picking) then
-                if not InputService:GetFocusedTextBox() then
                 KeyPicker:Update();
             end;
-        end;
         end))
 
         KeyPicker:Update();
@@ -1353,7 +1331,6 @@ do
     BaseAddons.__namecall = function(Table, Key, ...)
         return Funcs[Key](...);
     end;
-end;
 end;
 
 local BaseGroupbox = {};
@@ -2141,7 +2118,6 @@ do
                 local Diff = mPos - (Fill.AbsolutePosition.X + gPos);
 
                 while InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
-                    if not InputService:GetFocusedTextBox() then
                     local nMPos = Mouse.X;
                     local nX = math.clamp(gPos + (nMPos - mPos) + Diff, 0, Slider.MaxSize);
 
@@ -2161,7 +2137,6 @@ do
 
                 Library:AttemptSave();
             end;
-        end;
         end);
 
         Slider:Display();
@@ -2554,7 +2529,6 @@ do
         end;
 
         DropdownOuter.InputBegan:Connect(function(Input)
-            if not InputService:GetFocusedTextBox() then
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and not Library:MouseIsOverOpenedFrame() then
                 if ListOuter.Visible then
                     Dropdown:CloseDropdown();
@@ -2562,11 +2536,9 @@ do
                     Dropdown:OpenDropdown();
                 end;
             end;
-            end;
         end);
 
         InputService.InputBegan:Connect(function(Input)
-            if not InputService:GetFocusedTextBox() then
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                 local AbsPos, AbsSize = ListOuter.AbsolutePosition, ListOuter.AbsoluteSize;
 
@@ -2575,7 +2547,6 @@ do
 
                     Dropdown:CloseDropdown();
                 end;
-            end;
             end;
         end);
 
@@ -3632,15 +3603,13 @@ function Library:CreateWindow(...)
     end
 
     Library:GiveSignal(InputService.InputBegan:Connect(function(Input, Processed)
-        if type(Library.ToggleKeybind) == 'table' and Library.ToggleKeybind.Type == 'KeyPicker' then
-            if not InputService:GetFocusedTextBox() then
-            if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode.Name == Library.ToggleKeybind.Value then
+        if type(Library.ToggleKeybind) == 'table' and Library.ToggleKeybind.Type == 'KeyPicker' and not InputService:GetFocusedTextBox() then
+            if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode.Name == Library.ToggleKeybind.Value and not InputService:GetFocusedTextBox() then
                 task.spawn(Library.Toggle)
             end
-        elseif Input.KeyCode == Enum.KeyCode.RightControl or (Input.KeyCode == Enum.KeyCode.RightShift and (not Processed)) then
+        elseif Input.KeyCode == Enum.KeyCode.RightControl or (Input.KeyCode == Enum.KeyCode.RightShift and (not Processed)) and not InputService:GetFocusedTextBox() then
             task.spawn(Library.Toggle)
         end
-    end
     end))
 
     if Config.AutoShow then task.spawn(Library.Toggle) end
