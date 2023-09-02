@@ -1321,7 +1321,7 @@ do
                 end;
 
                 KeyPicker:Update();
-            end;
+            --end;
 
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                 local AbsPos, AbsSize = ModeSelectOuter.AbsolutePosition, ModeSelectOuter.AbsoluteSize;
