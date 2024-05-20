@@ -207,13 +207,11 @@ function Flux:Window(text, bottom,mainclr,toclose)
 	)
 	
 	function Flux:Notification(desc,buttontitle)
-        if MainFrame then
-            for i,v in pairs(MainFrame:GetChildren()) do
-                if v.Name == "NotificationBase" then
-                    v:Destroy()
-                end
-            end
-        end
+		for i, v in pairs(MainFrame:GetChildren()) do
+			if v.Name == "NotificationBase" then
+				v:Destroy()
+			end
+		end
 		local NotificationBase = Instance.new("TextButton")
 		local NotificationBaseCorner = Instance.new("UICorner")
 		local NotificationFrame = Instance.new("Frame")
@@ -469,15 +467,13 @@ function Flux:Window(text, bottom,mainclr,toclose)
 		end
 		
 		Tab.MouseButton1Click:Connect(function()
-            if ContainerFolder then
-                for i,v in pairs(ContainerFolder:GetChildren()) do
-                    if v.Name == "Container" then
-                        v.Visible = false
-                    end
-                    Container.Visible = true
-                end
-            end
-			for i,v in pairs(abHold:GetChildren()) do
+			for i, v in pairs(ContainerFolder:GetChildren()) do
+				if v.Name == "Container" then
+					v.Visible = false
+				end
+				Container.Visible = true
+			end
+			for i, v in pairs(TabHold:GetChildren()) do
 				if v.Name == "Tab" then
 					TweenService:Create(
 						v,
@@ -1730,7 +1726,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 				Title.Text = text
 				FrameSize = 0
 				ItemCount = 0
-				for i, v in next, DropItemHolder:GetChildren() do
+				for i, v in pairs(DropItemHolder:GetChildren()) do
 					if v.Name == "Item" then
 						v:Destroy()
 					end
