@@ -207,11 +207,13 @@ function Flux:Window(text, bottom,mainclr,toclose)
 	)
 	
 	function Flux:Notification(desc,buttontitle)
-		for i, v in pairs(MainFrame:GetChildren()) do
-			if v.Name == "NotificationBase" then
-				v:Destroy()
-			end
-		end
+        if MainFrame then
+            for i,v in pairs(MainFrame:GetChildren()) do
+                if v.Name == "NotificationBase" then
+                    v:Destroy()
+                end
+            end
+        end
 		local NotificationBase = Instance.new("TextButton")
 		local NotificationBaseCorner = Instance.new("UICorner")
 		local NotificationFrame = Instance.new("Frame")
@@ -467,13 +469,15 @@ function Flux:Window(text, bottom,mainclr,toclose)
 		end
 		
 		Tab.MouseButton1Click:Connect(function()
-			for i, v in pairs(ContainerFolder:GetChildren()) do
-				if v.Name == "Container" then
-					v.Visible = false
-				end
-				Container.Visible = true
-			end
-			for i, v in pairs(TabHold:GetChildren()) do
+            if ContainerFolder then
+                for i,v in pairs(ContainerFolder:GetChildren()) do
+                    if v.Name == "Container" then
+                        v.Visible = false
+                    end
+                    Container.Visible = true
+                end
+            end
+			for i,v in pairs(abHold:GetChildren()) do
 				if v.Name == "Tab" then
 					TweenService:Create(
 						v,
@@ -727,7 +731,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 			end)
 			Container.CanvasSize = UDim2.new(0, 0, 0, ContainerLayout.AbsoluteContentSize.Y)
 		end
-		function ContainerContent:Toggle(text, desc,default, callback)
+		function ContainerContent:Toggle(text, desc, default, callback)
 			local ToggleDescToggled = false
 			local Toggled = false
 			if desc == "" then
@@ -1726,7 +1730,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 				Title.Text = text
 				FrameSize = 0
 				ItemCount = 0
-				for i, v in pairs(DropItemHolder:GetChildren()) do
+				for i, v in next, DropItemHolder:GetChildren() do
 					if v.Name == "Item" then
 						v:Destroy()
 					end
@@ -2746,4 +2750,3 @@ function Flux:Window(text, bottom,mainclr,toclose)
 	end
 	return Tabs
 end
-return Flux
