@@ -477,7 +477,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
                     Container.Visible = true
                 end
             end
-			for i,v in pairs(abHold:GetChildren()) do
+			for i,v in pairs(TabHold:GetChildren()) do
 				if v.Name == "Tab" then
 					TweenService:Create(
 						v,
