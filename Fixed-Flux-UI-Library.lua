@@ -98,7 +98,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 	local GlowTabHolder = Instance.new("ImageLabel")
 	local Title = Instance.new("TextLabel")
 	local BottomText = Instance.new("TextLabel")
-	local TabHold = Instance.new("Frame")
+	local TabHold = Instance.new("ScrollingFrame")
 	local TabLayout = Instance.new("UIListLayout")
 	local Drag = Instance.new("Frame")
 	local ContainerFolder = Instance.new("Folder")
@@ -168,6 +168,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 	TabHold.BackgroundTransparency = 1.000
 	TabHold.Position = UDim2.new(0, 0, 0.167355374, 0)
 	TabHold.Size = UDim2.new(0, 205, 0, 403)
+    TabHold.CanvasSize = UDim2.new(0,0,10,0)
 
 	TabLayout.Name = "TabLayout"
 	TabLayout.Parent = TabHold
