@@ -1,4 +1,4 @@
---// Line 3530 to 3563 commented out, read them for more info.
+--// Line 3530 to 3568 commented out, read them for more info.
 
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
@@ -3560,12 +3560,12 @@ function Library:CreateWindow(...)
     
                         RenderStepped:Wait();
                     end;
-                ]]--
 
                 InputService.MouseIconEnabled = State;
 
                 Cursor:Remove();
                 CursorOutline:Remove();
+            ]]--
             end);
         end;
 
