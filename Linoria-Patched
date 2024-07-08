@@ -1,4 +1,4 @@
---// Line 3530 to 3568 commented out, read them for more info.
+--// Line 3530 to 3569 commented out, read them for more info.
 
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
@@ -3565,8 +3565,8 @@ function Library:CreateWindow(...)
 
                 Cursor:Remove();
                 CursorOutline:Remove();
-            ]]--
             end);
+            ]]--
         end;
 
         for _, Desc in next, Outer:GetDescendants() do
