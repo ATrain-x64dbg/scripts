@@ -2,7 +2,7 @@
 
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
-local CoreGui = game:GetService("CoreGui"):WaitForChild("RobloxGui", 9e9);
+local CoreGui = nil
 local Teams = game:GetService('Teams');
 local Players = game:GetService('Players');
 local RunService = game:GetService('RunService')
